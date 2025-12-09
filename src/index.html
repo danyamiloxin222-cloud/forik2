@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФОРИК — загрузка и обновления</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <!-- Уведомление администратора -->
+    <div id="siteNotification" class="site-notification" style="display: none;">
+        <div class="site-notification-content">
+            <div class="site-notification-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="site-notification-text" id="notificationMessage"></div>
+            <button class="site-notification-close" id="notificationClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="container topbar-row">
+                <div class="brand">
+                    <div class="brand-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="brand-text">
+                        <span class="brand-kicker">ФОРИК</span>
+                        <span class="brand-sub">Авто-генератор и подача жалоб</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#download">Скачать</a>
+                    <a href="#updates">Обновления</a>
+                    <a href="#community">Telegram</a>
+                </nav>
+                <div class="topbar-actions">
+                    <button class="theme-toggle" id="themeToggle" title="Переключить тему">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                    <button class="btn ghost" id="adminBtn" style="display: none;">
+                        <i class="fas fa-cog"></i>
+                        Админ
+                    </button>
+                    <a class="btn primary" href="#download">
+                        <i class="fas fa-download"></i>
+                        Скачать
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero scroll-fade-in">
+                <div class="container hero-grid">
+                    <div class="hero-copy">
+                        <h1>Скачайте ФОРИК — последняя версия доступна</h1>
+                            <p class="lede">
+                            Автоматизируйте создание и подачу жалоб на форуме Radmir. 
+                            Следите за обновлениями и скачивайте актуальную версию приложения.
+                        </p>
+                        <div class="cta-group">
+                            <button class="btn primary large" data-download="forik" id="downloadBtnMain">
+                                <i class="fas fa-download"></i>
+                                Скачать ФОРИК.exe
+                            </button>
+                        </div>
+                        <div class="meta">
+                            <span id="currentVersion">v1.0.0</span>
+                            <span class="dot"></span>
+                            <span>Windows • 64-bit</span>
+                            <span class="dot"></span>
+                            <span>Поддержка: <a href="https://t.me/forum_otryad_bot" target="_blank">@forum_otryad_bot</a></span>
+                        </div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card__header">
+                            <span>Превью интерфейса</span>
+                            <span class="badge">Glass UI</span>
+                        </div>
+                        <div class="hero-card__body">
+                            <div class="app-preview-image">
+                                <img src="preview.png" alt="Превью интерфейса ФОРИК" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; text-align: center; color: var(--muted);\'>Превью интерфейса</div>'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="download" class="section scroll-fade-in">
+                <div class="container">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Загрузка</p>
+                            <h2>Скачайте ФОРИК для Windows</h2>
+                            <p class="muted">Приложение для Windows 64-bit. Распространяется бесплатно. Не требует установки.</p>
+                        </div>
+                        <div class="pill">Без регистрации</div>
+                    </div>
+                    <div class="download-card single scroll-fade-in-delay-1">
+                        <div class="card-top">
+                            <div class="icon-circle"><i class="fas fa-desktop"></i></div>
+                            <div>
+                                <h3>ФОРИК для Windows</h3>
+                                <p class="muted">Скачайте последнюю версию приложения. Всегда актуальная версия!</p>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Готово к использованию сразу после скачивания</li>
+                            <li><i class="fas fa-check"></i> Не требует установки</li>
+                            <li><i class="fas fa-check"></i> Автоматизация создания и подачи жалоб</li>
+                            <li><i class="fas fa-check"></i> Поддержка Windows 64-bit</li>
+                        </ul>
+                        <button class="btn primary full" data-download="forik" id="downloadBtnSection">
+                            <i class="fas fa-download"></i>
+                            Скачать ФОРИК.exe
+                        </button>
+                        <div class="download-meta">
+                            <span id="downloadVersion">v1.4.0</span>
+                            <span class="dot"></span>
+                            <span>Windows 64-bit</span>
+                            <span class="dot"></span>
+                            <span id="downloadSize">~150 MB</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="updates" class="section scroll-fade-in">
+                <div class="container">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">История версий</p>
+                            <h2>История обновлений ФОРИК</h2>
+                            <p class="muted">Следите за последними изменениями и новыми функциями.</p>
+                        </div>
+                        <div class="pill accent" id="latestTag">v1.0.0</div>
+                    </div>
+                    <div id="updatesList" class="timeline scroll-fade-in-delay-1"></div>
+                </div>
+            </section>
+
+            <section id="community" class="section cta scroll-fade-in">
+                <div class="container cta-card">
+                    <div>
+                        <p class="eyebrow">Поддержка</p>
+                        <h2>Telegram-бот для связи</h2>
+                        <p class="muted">Задавайте вопросы, получайте помощь и делитесь предложениями через бота.</p>
+                        <div class="cta-actions">
+                            <a class="btn primary" href="https://t.me/forum_otryad_bot" target="_blank" rel="noopener">
+                                <i class="fab fa-telegram"></i>
+                                Перейти в бот
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cta-badge">
+                        <span class="icon-circle large"><i class="fas fa-shield-alt"></i></span>
+                        <p>Релизы проверяются на запуск и подпись.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer-row">
+                <span>© ФОРИК, 2025. Форумный Отряд Радмира.</span>
+                <div class="footer-links">
+                    <a href="#updates">Обновления</a>
+                    <a href="https://t.me/forum_otryad_bot" target="_blank">Поддержка</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="adminModal" class="admin-modal" style="display: none;">
+        <div class="admin-modal-content">
+            <div class="admin-header">
+                <h2>Админ-панель</h2>
+                <button class="admin-close" id="adminClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="adminLogin" class="admin-section">
+                <h3>Вход</h3>
+                <div class="admin-form-group">
+                    <label>Пароль администратора</label>
+                    <input type="password" id="adminPassword" placeholder="Введите пароль">
+                </div>
+                <button class="btn primary" id="adminLoginBtn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Войти
+                </button>
+            </div>
+            <div id="adminPanel" class="admin-section" style="display: none;">
+                <div class="admin-tabs">
+                    <button class="admin-tab active" data-tab="updates">Обновления</button>
+                    <button class="admin-tab" data-tab="settings">Настройки</button>
+                    <button class="admin-tab" data-tab="notifications">Уведомления</button>
+                    <button class="admin-tab" data-tab="tools">Инструменты</button>
+                </div>
+                <div id="adminUpdates" class="admin-tab-content active">
+                    <div id="addUpdateForm" class="admin-form-card" style="display: none;">
+                        <div class="admin-form-header">
+                            <h3>Добавить новое обновление</h3>
+                            <button class="admin-close-small" id="cancelAddBtn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="admin-form-body">
+                            <div class="admin-form-row">
+                                <div class="admin-form-group">
+                                    <label>Версия <span class="required">*</span></label>
+                                    <input type="text" id="addVersion" placeholder="1.5.0" required>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label>Дата <span class="required">*</span></label>
+                                    <input type="text" id="addDate" placeholder="15.12.2025" required>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label>Тип <span class="required">*</span></label>
+                                    <select id="addType">
+                                        <option value="major">Глобальное</option>
+                                        <option value="minor">Промежуточное</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="admin-form-group">
+                                <label>Список изменений <span class="required">*</span></label>
+                                <textarea id="addItems" rows="6" placeholder="Каждое изменение на новой строке&#10;Например:&#10;Новая функция автоподачи&#10;Исправлен баг с сохранением&#10;Улучшена производительность"></textarea>
+                                <small class="admin-hint">Каждое изменение на новой строке</small>
+                            </div>
+                            <div class="admin-form-preview" id="addPreview">
+                                <strong>Превью:</strong>
+                                <div class="preview-content"></div>
+                            </div>
+                            <div class="admin-form-actions">
+                                <button class="btn ghost" id="cancelAddFormBtn">Отмена</button>
+                                <button class="btn primary" id="saveAddBtn">
+                                    <i class="fas fa-save"></i>
+                                    Сохранить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="editUpdateForm" class="admin-form-card" style="display: none;">
+                        <div class="admin-form-header">
+                            <h3>Редактировать обновление</h3>
+                            <button class="admin-close-small" id="cancelEditBtn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="admin-form-body">
+                            <div class="admin-form-row">
+                                <div class="admin-form-group">
+                                    <label>Версия <span class="required">*</span></label>
+                                    <input type="text" id="editVersion" required>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label>Дата <span class="required">*</span></label>
+                                    <input type="text" id="editDate" required>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label>Тип <span class="required">*</span></label>
+                                    <select id="editType">
+                                        <option value="major">Глобальное</option>
+                                        <option value="minor">Промежуточное</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="admin-form-group">
+                                <label>Список изменений <span class="required">*</span></label>
+                                <textarea id="editItems" rows="6"></textarea>
+                                <small class="admin-hint">Каждое изменение на новой строке</small>
+                            </div>
+                            <div class="admin-form-preview" id="editPreview">
+                                <strong>Превью:</strong>
+                                <div class="preview-content"></div>
+                            </div>
+                            <div class="admin-form-actions">
+                                <button class="btn ghost" id="cancelEditFormBtn">Отмена</button>
+                                <button class="btn primary" id="saveEditBtn">
+                                    <i class="fas fa-save"></i>
+                                    Сохранить изменения
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="admin-actions">
+                        <button class="btn primary" id="addUpdateBtn">
+                            <i class="fas fa-plus"></i>
+                            Добавить обновление
+                        </button>
+                    </div>
+                    <div id="updatesAdminList" class="admin-list"></div>
+                </div>
+                <div id="adminSettings" class="admin-tab-content">
+                    <div class="admin-stats-card">
+                        <h4>Статистика</h4>
+                        <div class="admin-stats-grid">
+                            <div class="admin-stat-item">
+                                <div class="admin-stat-value" id="statsTotalUpdates">0</div>
+                                <div class="admin-stat-label">Всего обновлений</div>
+                            </div>
+                            <div class="admin-stat-item">
+                                <div class="admin-stat-value" id="statsLastUpdate">-</div>
+                                <div class="admin-stat-label">Последнее обновление</div>
+                            </div>
+                            <div class="admin-stat-item">
+                                <div class="admin-stat-value" id="statsGlobalCount">0</div>
+                                <div class="admin-stat-label">Глобальных</div>
+                            </div>
+                            <div class="admin-stat-item">
+                                <div class="admin-stat-value" id="statsMinorCount">0</div>
+                                <div class="admin-stat-label">Промежуточных</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Текущая версия приложения</label>
+                        <input type="text" id="currentVersionInput" placeholder="v1.4.0">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Размер файла</label>
+                        <input type="text" id="downloadSizeInput" placeholder="~150 MB">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>URL для скачивания .exe файла</label>
+                        <input type="url" id="downloadUrlInput" placeholder="https://github.com/.../ComplaintApp.exe">
+                        <small class="admin-hint">Прямая ссылка на .exe файл для скачивания. Оставьте пустым для использования дефолтного URL.</small>
+                    </div>
+                    <button class="btn primary" id="saveSettingsBtn">
+                        <i class="fas fa-save"></i>
+                        Сохранить настройки
+                    </button>
+                </div>
+                <div id="adminNotifications" class="admin-tab-content">
+                    <div class="admin-form-card">
+                        <div class="admin-form-header">
+                            <h3>Управление уведомлением</h3>
+                        </div>
+                        <div class="admin-form-body">
+                            <div class="admin-form-group">
+                                <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+                                    <input type="checkbox" id="notificationEnabled" style="width: auto; margin: 0;">
+                                    <span>Показать уведомление на сайте</span>
+                                </label>
+                                <small class="admin-hint">Уведомление будет отображаться по центру экрана для всех посетителей</small>
+                            </div>
+                            <div class="admin-form-group">
+                                <label>Текст уведомления <span class="required">*</span></label>
+                                <textarea id="notificationText" rows="4" placeholder="Например: Сайт временно не работает. Автоподача недоступна."></textarea>
+                                <small class="admin-hint">Опишите причину или предупреждение для пользователей</small>
+                            </div>
+                            <div class="admin-form-group">
+                                <label>Цвет уведомления <span class="required">*</span></label>
+                                <select id="notificationColor">
+                                    <option value="red">Красный (критично)</option>
+                                    <option value="yellow">Желтый (предупреждение)</option>
+                                    <option value="orange">Оранжевый (важно)</option>
+                                </select>
+                                <small class="admin-hint">Выберите цвет в зависимости от важности уведомления</small>
+                            </div>
+                            <div class="admin-form-preview" id="notificationPreview" style="display: none;">
+                                <strong>Превью уведомления:</strong>
+                                <div class="notification-preview-box"></div>
+                            </div>
+                            <div class="admin-form-actions">
+                                <button class="btn primary" id="saveNotificationBtn">
+                                    <i class="fas fa-save"></i>
+                                    Сохранить уведомление
+                                </button>
+                                <button class="btn ghost" id="clearNotificationBtn">
+                                    <i class="fas fa-times"></i>
+                                    Удалить уведомление
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="adminTools" class="admin-tab-content">
+                    <div class="admin-tools-section">
+                        <h4>Экспорт и импорт данных</h4>
+                        <p class="admin-hint">Сохраните резервную копию обновлений или восстановите из файла</p>
+                        <div class="admin-tools-actions">
+                            <button class="btn primary" id="exportDataForServerBtn">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                Опубликовать изменения (автоматически)
+                            </button>
+                            <button class="btn ghost" id="exportDataBtn">
+                                <i class="fas fa-download"></i>
+                                Экспортировать данные
+                            </button>
+                            <label for="importDataInput" class="btn ghost" style="cursor: pointer;">
+                                <i class="fas fa-upload"></i>
+                                Импортировать данные
+                            </label>
+                            <input type="file" id="importDataInput" accept=".json" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="admin-tools-section">
+                        <h4>Быстрые действия</h4>
+                        <div class="admin-tools-actions">
+                            <button class="btn ghost" id="resetToDefaultBtn">
+                                <i class="fas fa-undo"></i>
+                                Сбросить к дефолту
+                            </button>
+                            <button class="btn danger" id="clearAllUpdatesBtn">
+                                <i class="fas fa-trash-alt"></i>
+                                Удалить все обновления
+                            </button>
+                        </div>
+                    </div>
+                    <div class="admin-tools-section">
+                        <h4>Информация</h4>
+                        <div class="admin-info-card">
+                            <div class="admin-info-item">
+                                <strong>Версия админ-панели:</strong>
+                                <span>1.0.0</span>
+                            </div>
+                            <div class="admin-info-item">
+                                <strong>Последнее изменение:</strong>
+                                <span id="lastChangeTime">-</span>
+                            </div>
+                            <div class="admin-info-item">
+                                <strong>Всего записей в хранилище:</strong>
+                                <span id="storageSize">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteConfirmModal" class="admin-modal" style="display: none;">
+        <div class="admin-modal-content small">
+            <div class="admin-header">
+                <h2>Подтверждение удаления</h2>
+                <button class="admin-close" id="deleteCancelBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="admin-section">
+                <p>Вы уверены, что хотите удалить обновление <strong id="deleteVersionText"></strong>?</p>
+                <div class="admin-form-actions" style="margin-top: 1.5rem;">
+                    <button class="btn ghost" id="deleteCancelConfirmBtn">Отмена</button>
+                    <button class="btn danger" id="deleteConfirmBtn">
+                        <i class="fas fa-trash"></i>
+                        Удалить
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="landing.js"></script>
+    <script src="download.js"></script>
+</body>
+</html>
