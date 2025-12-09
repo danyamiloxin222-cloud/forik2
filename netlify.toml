@@ -1,0 +1,26 @@
+toml
+[build]
+  base = "src"
+  publish = "."
+  command = "echo 'No build needed'"
+
+# API для лаунчера и данных сайта
+[[redirects]]
+  from = "/api/version"
+  to = "/api/version.json"
+  status = 200
+
+[[redirects]]
+  from = "/api/data.json"
+  to = "/api/data.json"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
