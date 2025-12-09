@@ -1,10 +1,8 @@
-toml
 [build]
   base = "src"
   publish = "."
-  command = "echo 'No build needed'"
+  command = "echo No build needed"
 
-# API для лаунчера и данных сайта
 [[redirects]]
   from = "/api/version"
   to = "/api/version.json"
