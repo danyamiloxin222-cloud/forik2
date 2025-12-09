@@ -36,6 +36,10 @@
     "downloadSize": "~150 MB",
     "downloadUrl": ""
   },
-  "notification": null
+  "notification": {
+    "enabled": true,
+    "text": "Не работает!",
+    "color": "red"
+  },
+  "lastUpdate": "2025-12-09T16:46:14.308Z"
 }
-
